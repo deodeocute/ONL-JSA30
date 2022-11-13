@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let users = ['Phước', 'Ngọc', 'Hân', 'Long']
+        localStorage.setItem('users', JSON.stringify(users))
+        
+        let get_users = JSON.parse(localStorage.getItem('users')) 
+        console.log(get_users)
+        let index = get_users.indexOf('Phước')
+        console.log(index)
+        get_users.splice(index,1,'Hà')
+        console.log(get_users)
+
+        localStorage.setItem('users', JSON.stringify(get_users))
+
+        let name_ha = get_users.indexOf('Hà')
+        get_users.splice(name_ha,1)
+        localStorage.setItem('users', JSON.stringify(get_users))
+
+        localStorage.removeItem('users')
+
+        let test = [{name: inp.value, pass:'test'}]
+        
+    </script>
+</body>
+</html>

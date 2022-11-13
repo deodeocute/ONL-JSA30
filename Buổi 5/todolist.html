@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="todoList">
+        <h1>To-do List</h1>
+        <input type="text" class="taskname" />
+            <button type="button" class="btnTask" onclick="btnAdd()">
+                Add Task
+            </button>
+    </div>
+    <ul class="tasklist"></ul>
+    </div>
+
+    <script>
+        var inp = document.querySelector(".taskname");
+        var list = document.querySelector(".tasklist");
+        var addTask = document.querySelector(".btnTask");
+        var taskList = [];
+
+        function btnAdd() {
+            // console.log(inp.value)
+            // console.log(list)
+            if (inp.value == ""){
+                alert("Nhập gì đó đi!")
+            }
+            else{
+                let newTask = document.createElement("li")
+                // console.dir(newTask)
+                newTask.innerHTML = inp.value
+                // console.log(newTask)
+                list.appendChild(newTask)
+                taskList.push(inp.value)
+                inp.value = ""
+                // console.log(taskList);
+                localStorage.setItem('todolist', JSON.stringify(taskList))
+            }
+        }
+        // addTask.addEventListener("click", e => {
+        //     if (inp.value !== "") {
+        //         let newEl = document.createElement("li");
+        //         newEl.innerHTML = inp.value;
+        //         newEl.classList.add("list-group-item");
+        //         list.appendChild(newEl);
+        //         taskList.push(inp.value);
+        //         inp.value = "";
+        //         localStorage.setItem("mylist", JSON.stringify(taskList));
+        //     } else {
+        //         alert("Please input your task");
+        //     }
+        // });
+    </script>
+</body>
+
+</html>
