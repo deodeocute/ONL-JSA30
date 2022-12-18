@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // function equation(a, b){
+        //     return -b/a
+        // }
+        let equation = (a,b) =>{
+            return -b/a
+        }
+        
+        let tamGiac = (a,b) =>{
+            let c2 = Math.pow(a,2) + Math.pow(b,2)
+            console.log('Cạnh huyền: ',Math.pow(c2 , 1/2))
+            console.log('Cạnh huyền: ',Math.sqrt(c2))
+            console.log('Đường cao', 2*a*b/ c2 )
+        }
+        tamGiac(3,4)
+        console.log(equation(5,8)) 
+    </script>
+</body>
+</html>
